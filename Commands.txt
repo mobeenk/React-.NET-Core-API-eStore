@@ -1,0 +1,6 @@
+npx create-react-app client --template typescript --use-npm
+npm start
+
+
+netstat -ano | findstr :3000
+tskill typeyourPIDhere 
