@@ -1,6 +1,18 @@
 npx create-react-app client --template typescript --use-npm
 npm start
-
+npm i @mui/icons-material
 
 netstat -ano | findstr :3000
 tskill typeyourPIDhere 
+
+ROUTING:
+npm install react-router-dom@5.3.0 @types/react-router-dom@5.3.2
+
+AXIOS:
+npm install axios
+
+TOAST:
+npm install react-toastify
+
+fix router
+npm install react-router-dom@5.2.0 @types/react-router-dom@5.1.8 @types/history@4.7.9
