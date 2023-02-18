@@ -1,10 +1,11 @@
 
+import { RequestPageSharp } from "@mui/icons-material";
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { toast } from "react-toastify";
 import { history } from "../..";
 
 const sleep = ()=> new Promise(resolve => setTimeout(resolve, 500));
-
+axios.defaults.withCredentials = true;
 axios.defaults.baseURL = "http://localhost:5000/api/";
 
 const responseBody = (response: AxiosResponse) => response.data;
@@ -37,7 +38,6 @@ axios.interceptors.response.use(async response =>{
             });
             break;
             // history.push('/server-error')
-            break
         default:
             break
     }
@@ -64,8 +64,14 @@ const TestErrors = {
     getValidationError: ()=> http.get('buggy/validation-error'),
 }
 
+const Basket = {
+    get: () => http.get('basket'),
+    addItem: (productId: number, quantity = 1) => http.post(`basket?productId=${productId}&quantity=${quantity}`, {}),
+    removeItem: (productId: number, quantity = 1) => http.delete(`basket?productId=${productId}&quantity=${quantity}`)
+}
+
 const agent = {
-    Catalog,
+    Catalog,Basket,
     TestErrors
 }
 

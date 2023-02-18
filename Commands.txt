@@ -15,4 +15,10 @@ TOAST:
 npm install react-toastify
 
 fix router
-npm install react-router-dom@5.2.0 @types/react-router-dom@5.1.8 @types/history@4.7.9
+npm install react-router-dom@5.2.0 @types/react-router-dom@5.1.8 @types/history@4.7.9ldf
+
+dotnet ef migrations add BasketEntityAdded
+dotnet ef database update
+
+
+npm install @mui/lab @mui/material
